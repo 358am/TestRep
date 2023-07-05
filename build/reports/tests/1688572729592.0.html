@@ -1,0 +1,910 @@
+<html lang="ru"><head>
+    <meta charset="UTF-8">
+    <title>Медицинская Информационная Система</title>
+    <base href="/test/">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="icon.png">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+/*!
+ * Materialize v0.97.7 (http://materializecss.com)
+ * Copyright 2014-2015 Materialize
+ * MIT License (https://raw.githubusercontent.com/Dogfalo/materialize/master/LICENSE)
+ */
+/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+}
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+.left {
+  float: left !important;
+}
+.right {
+  float: right !important;
+}
+.circle {
+  border-radius: 50%;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: local(Roboto Thin), url('Roboto-Thin.85d2f90c2f16f2f4.eot');
+  src: url('Roboto-Thin.85d2f90c2f16f2f4.eot?#iefix') format('embedded-opentype'),
+    url('Roboto-Thin.04e13675b1493ad2.woff2') format('woff2'), url('Roboto-Thin.07c6d6ea9c229edb.woff') format('woff'),
+    url('Roboto-Thin.e110f8a2b691cca0.ttf') format('truetype');
+  font-weight: 200;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: local(Roboto Light), url('Roboto-Light.c4c6ff55d69bd565.eot');
+  src: url('Roboto-Light.c4c6ff55d69bd565.eot?#iefix') format('embedded-opentype'),
+    url('Roboto-Light.0ccfdf89065a00b3.woff2') format('woff2'), url('Roboto-Light.790c228262b3cc43.woff') format('woff'),
+    url('Roboto-Light.57c1b7d1f6f0e18b.ttf') format('truetype');
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: local(Roboto Regular), url('Roboto-Regular.5b3da978b759cd2c.eot');
+  src: url('Roboto-Regular.5b3da978b759cd2c.eot?#iefix') format('embedded-opentype'),
+    url('Roboto-Regular.793b729fcc55fb15.woff2') format('woff2'),
+    url('Roboto-Regular.0a9edc5b190f2190.woff') format('woff'),
+    url('Roboto-Regular.af1dafcfb9d93cb7.ttf') format('truetype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url('Roboto-Medium.f81a7d3ed6cfe3d3.eot');
+  src: url('Roboto-Medium.f81a7d3ed6cfe3d3.eot?#iefix') format('embedded-opentype'),
+    url('Roboto-Medium.0519ad6f9869d898.woff2') format('woff2'), url('Roboto-Medium.99acac18e078b66e.woff') format('woff'),
+    url('Roboto-Medium.a45a11493bf6e7b3.ttf') format('truetype');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url('Roboto-Bold.5cab92a72f93535f.eot');
+  src: url('Roboto-Bold.5cab92a72f93535f.eot?#iefix') format('embedded-opentype'),
+    url('Roboto-Bold.6690f2dc3ac60371.woff2') format('woff2'), url('Roboto-Bold.e4cd99ec6cee4d80.woff') format('woff'),
+    url('Roboto-Bold.6540e693bb4dda23.ttf') format('truetype');
+  font-weight: 700;
+}
+html {
+  line-height: 1.5;
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
+  color: rgba(0, 0, 0, 0.87);
+}
+@media only screen and (min-width: 0) {
+  html {
+    font-size: 14px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  html {
+    font-size: 14.5px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  html {
+    font-size: 15px;
+  }
+}
+/*!
+ * Waves v0.6.0
+ * http://fian.my.id/Waves
+ *
+ * Copyright 2014 Alfiana E. Sibuea and other contributors
+ * Released under the MIT license
+ * https://github.com/fians/Waves/blob/master/LICENSE
+ */
+.preloader-wrapper {
+  display: inline-block;
+  position: relative;
+  width: 48px;
+  height: 48px;
+}
+.preloader-wrapper.small {
+  width: 36px;
+  height: 36px;
+}
+.preloader-wrapper.active {
+  animation: container-rotate 1568ms linear infinite;
+}
+@keyframes container-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.spinner-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  border-color: #26a69a;
+}
+.spinner-green-only {
+  border-color: #0f9d58;
+}
+.active .spinner-layer,
+.active .spinner-layer.spinner-green-only {
+  opacity: 1;
+  animation: fill-unfill-rotate 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+}
+@keyframes fill-unfill-rotate {
+  12.5% {
+    transform: rotate(135deg);
+  }
+  25% {
+    transform: rotate(270deg);
+  }
+  37.5% {
+    transform: rotate(405deg);
+  }
+  50% {
+    transform: rotate(540deg);
+  }
+  62.5% {
+    transform: rotate(675deg);
+  }
+  75% {
+    transform: rotate(810deg);
+  }
+  87.5% {
+    transform: rotate(945deg);
+  }
+  to {
+    transform: rotate(1080deg);
+  }
+}
+.gap-patch {
+  position: absolute;
+  top: 0;
+  left: 45%;
+  width: 10%;
+  height: 100%;
+  overflow: hidden;
+  border-color: inherit;
+}
+.gap-patch .circle {
+  width: 1000%;
+  left: -450%;
+}
+.circle-clipper {
+  display: inline-block;
+  position: relative;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  border-color: inherit;
+}
+.circle-clipper .circle {
+  width: 200%;
+  height: 100%;
+  border-width: 3px;
+  border-style: solid;
+  border-color: inherit;
+  border-bottom-color: transparent !important;
+  border-radius: 50%;
+  animation: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+.circle-clipper.left .circle {
+  left: 0;
+  border-right-color: transparent !important;
+  transform: rotate(129deg);
+}
+.circle-clipper.right .circle {
+  left: -100%;
+  border-left-color: transparent !important;
+  transform: rotate(-129deg);
+}
+.active .circle-clipper.left .circle {
+  animation: left-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+}
+.active .circle-clipper.right .circle {
+  animation: right-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+}
+@keyframes left-spin {
+  from {
+    transform: rotate(130deg);
+  }
+  50% {
+    transform: rotate(-5deg);
+  }
+  to {
+    transform: rotate(130deg);
+  }
+}
+@keyframes right-spin {
+  from {
+    transform: rotate(-130deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  to {
+    transform: rotate(-130deg);
+  }
+}
+/*!
+ * Default mobile-first, responsive styling for pickadate.js
+ * Demo: http://amsul.github.io/pickadate.js
+ */
+
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+/*
+ * Arrow
+ */
+/*
+ * Arrow Right
+ */
+/*
+ * Arrow Alt
+ */
+/*
+ * Arrow Alt Right
+ */
+/*
+ * Squeeze
+ */
+
+/*! jQuery UI - v1.13.2 - 2022-07-14
+* http://jqueryui.com
+* Includes: core.css, accordion.css, autocomplete.css, menu.css, button.css, controlgroup.css, checkboxradio.css, datepicker.css, dialog.css, draggable.css, resizable.css, progressbar.css, selectable.css, selectmenu.css, slider.css, sortable.css, spinner.css, tabs.css, tooltip.css, theme.css
+* To view and modify this theme, visit http://jqueryui.com/themeroller/?bgShadowXPos=&bgOverlayXPos=&bgErrorXPos=&bgHighlightXPos=&bgContentXPos=&bgHeaderXPos=&bgActiveXPos=&bgHoverXPos=&bgDefaultXPos=&bgShadowYPos=&bgOverlayYPos=&bgErrorYPos=&bgHighlightYPos=&bgContentYPos=&bgHeaderYPos=&bgActiveYPos=&bgHoverYPos=&bgDefaultYPos=&bgShadowRepeat=&bgOverlayRepeat=&bgErrorRepeat=&bgHighlightRepeat=&bgContentRepeat=&bgHeaderRepeat=&bgActiveRepeat=&bgHoverRepeat=&bgDefaultRepeat=&iconsHover=url(%22images%2Fui-icons_555555_256x240.png%22)&iconsHighlight=url(%22images%2Fui-icons_777620_256x240.png%22)&iconsHeader=url(%22images%2Fui-icons_444444_256x240.png%22)&iconsError=url(%22images%2Fui-icons_cc0000_256x240.png%22)&iconsDefault=url(%22images%2Fui-icons_777777_256x240.png%22)&iconsContent=url(%22images%2Fui-icons_444444_256x240.png%22)&iconsActive=url(%22images%2Fui-icons_ffffff_256x240.png%22)&bgImgUrlShadow=&bgImgUrlOverlay=&bgImgUrlHover=&bgImgUrlHighlight=&bgImgUrlHeader=&bgImgUrlError=&bgImgUrlDefault=&bgImgUrlContent=&bgImgUrlActive=&opacityFilterShadow=Alpha(Opacity%3D30)&opacityFilterOverlay=Alpha(Opacity%3D30)&opacityShadowPerc=30&opacityOverlayPerc=30&iconColorHover=%23555555&iconColorHighlight=%23777620&iconColorHeader=%23444444&iconColorError=%23cc0000&iconColorDefault=%23777777&iconColorContent=%23444444&iconColorActive=%23ffffff&bgImgOpacityShadow=0&bgImgOpacityOverlay=0&bgImgOpacityError=95&bgImgOpacityHighlight=55&bgImgOpacityContent=75&bgImgOpacityHeader=75&bgImgOpacityActive=65&bgImgOpacityHover=75&bgImgOpacityDefault=75&bgTextureShadow=flat&bgTextureOverlay=flat&bgTextureError=flat&bgTextureHighlight=flat&bgTextureContent=flat&bgTextureHeader=flat&bgTextureActive=flat&bgTextureHover=flat&bgTextureDefault=flat&cornerRadius=3px&fwDefault=normal&ffDefault=Arial%2CHelvetica%2Csans-serif&fsDefault=1em&cornerRadiusShadow=8px&thicknessShadow=5px&offsetLeftShadow=0px&offsetTopShadow=0px&opacityShadow=.3&bgColorShadow=%23666666&opacityOverlay=.3&bgColorOverlay=%23aaaaaa&fcError=%235f3f3f&borderColorError=%23f1a899&bgColorError=%23fddfdf&fcHighlight=%23777620&borderColorHighlight=%23dad55e&bgColorHighlight=%23fffa90&fcContent=%23333333&borderColorContent=%23dddddd&bgColorContent=%23ffffff&fcHeader=%23333333&borderColorHeader=%23dddddd&bgColorHeader=%23e9e9e9&fcActive=%23ffffff&borderColorActive=%23003eff&bgColorActive=%23007fff&fcHover=%232b2b2b&borderColorHover=%23cccccc&bgColorHover=%23ededed&fcDefault=%23454545&borderColorDefault=%23c5c5c5&bgColorDefault=%23f6f6f6
+* Copyright jQuery Foundation and other contributors; Licensed MIT */
+/*
+  This stylesheet uses scss valiables for most of the colors / background-colors of the table
+  to enable the customization of the displayed table without cloning the stylesheet into the
+  own application.
+
+  To modify table colors, add the following lines to the scss file of your application
+  (this example modifies the color of the selected row - selectionType = single, multi or multiClick):
+
+  $ngx-datatable-selected-active-background: yellow;
+  $ngx-datatable-selected-active-background-hover: rgba(yellow, 0.2);
+
+  @import '~@swimlane/ngx-datatable/index.css';
+  @import '~@swimlane/ngx-datatable/themes/material.scss';
+  @import '~@swimlane/ngx-datatable/assets/icons.css';
+
+That's all.
+*/
+/**
+ * Checkboxes
+**/
+/**
+ * Progress bar animations
+ */
+
+@charset "UTF-8";
+
+@charset "UTF-8";
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+  margin: 0;
+}
+/**
+ * Render the `main` element consistently in IE.
+ */
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+/**
+ * Add the correct font size in all browsers.
+ */
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+/**
+ * Correct the padding in Firefox.
+ */
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+/*
+ * Add the correct display in all browsers.
+ */
+/* Misc
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10+.
+ */
+/**
+ * Add the correct display in IE 10.
+ */
+/*Наработки по стандартизации макетов. На основе требований к дизайну интерфейсов: https://guides.kontur.ru/ */
+/*Цветовая схема*/
+/*Макет кнопок с бордером*/
+/*Кнопка в виде панели*/
+/*-----------------------*/
+/*Позиционирование лоадера*/
+/*-------------------------*/
+/*Разделители между компонентами или на логические группы внутри одного*/
+/*------------------------*/
+/*Подложка для размещения второстепенных контролов интерфейса*/
+/*Оформлние блока с белым фоном*/
+/*Стиль для задизейбленных элементов (span, div), не считая контролов*/
+/*Позиционирование текста*/
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+body {
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-variant: tabular-nums;
+  line-height: 1.5;
+  font-feature-settings: "tnum";
+  margin: 0;
+  min-width: 1000px;
+  background: #f3f3f3;
+  position: relative;
+}
+.flex-container {
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex-item {
+  line-height: 20px;
+  color: #0f9d58;
+  font-size: 2em;
+  text-align: center;
+}
+.flex-item.blinker {
+  animation: blinker 2s ease-in-out infinite;
+}
+@keyframes blinker {
+  50% {
+    opacity: 0.5;
+  }
+}
+/* INPUTS */
+/* SELECT */
+/* Vertical Progress Bar point */
+/* CHECKBOX */
+/* HIDE RADIO */
+/*стили tooltipa материала*/
+/* navbar like material tab nav */
+/* wenk */
+/*-----------------*/
+/*-----------------*/
+/*-----------------*/
+</style><link rel="stylesheet" href="styles.84ef5084e57cab37.css" media="all" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.84ef5084e57cab37.css"></noscript><script type="text/javascript" src="chrome-extension://iifchhfnnmpdbibifmljnfjhpififfog/nmcades_plugin_api.js"></script><script type="text/javascript" src="chrome-extension://epebfcehmdedogndhlcacafjaacknbcm/nmcades_plugin_api.js"></script><style type="text/css"></style><style>.header[_ngcontent-eqi-c206] {
+  position: fixed;
+  width: 100%;
+  min-width: 1000px;
+  height: 75px;
+  padding: 6px;
+  font-size: 18px;
+  color: #fff;
+  background-color: #5c7c96;
+  z-index: 1000;
+}
+
+body[_ngcontent-eqi-c206] {
+  min-width: unset;
+}
+
+.logoMinWidth[_ngcontent-eqi-c206] {
+  min-width: 50px;
+}
+
+.header[_ngcontent-eqi-c206] {
+  background-color: rgb(92, 124, 150);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 75px;
+  font-family: "Gotham Pro", sans-serif;
+  z-index: 5;
+}
+
+.header__container[_ngcontent-eqi-c206] {
+  padding: 8px 23px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__container-left[_ngcontent-eqi-c206] {
+  display: flex;
+}
+
+.header__logo[_ngcontent-eqi-c206] {
+  width: 45px;
+  height: 57px;
+  background-size: cover;
+}
+
+.header__path[_ngcontent-eqi-c206] {
+  display: flex;
+  flex-direction: column;
+  padding-left: 24px;
+}
+
+.header__path-name[_ngcontent-eqi-c206] {
+  color: #a9b7c4;
+  font-size: 20px;
+}
+
+.header__path-name--strong[_ngcontent-eqi-c206] {
+  font-family: "Gotham Pro Medium", sans-serif;
+}
+
+.header__path-view[_ngcontent-eqi-c206] {
+  color: #ffffff;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.header__user[_ngcontent-eqi-c206] {
+  display: flex;
+  align-items: center;
+}
+
+.header__user-type[_ngcontent-eqi-c206] {
+  color: #a9b7c4;
+}
+
+.header__user-name[_ngcontent-eqi-c206] {
+  padding-left: 10px;
+  color: #ffffff;
+}
+
+.header__user-logout[_ngcontent-eqi-c206] {
+  padding-left: 25px;
+}
+
+.header__user-logout-icon[_ngcontent-eqi-c206] {
+  font-size: 25px;
+  color: #a9b7c4;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.header__user-logout-icon[_ngcontent-eqi-c206]:hover {
+  color: #ffffff;
+}
+
+.form-wrapper[_ngcontent-eqi-c206] {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 80px 0 30px;
+}
+
+.login-form[_ngcontent-eqi-c206] {
+  position: relative;
+  background: white;
+  width: 551px;
+  height: 520px;
+  max-width: calc(100% - 40px);
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: solid 1px #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 30px 55px;
+}
+
+.login-form__header[_ngcontent-eqi-c206] {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.login-form__header[_ngcontent-eqi-c206]   h2[_ngcontent-eqi-c206] {
+  font-weight: bold;
+  margin: 0 0 8px;
+}
+
+@media all and (max-height: 630px) {
+  .login-form__header[_ngcontent-eqi-c206] {
+    margin-bottom: 30px;
+  }
+}
+
+.login-form[_ngcontent-eqi-c206]   .input__container[_ngcontent-eqi-c206] {
+  margin-bottom: 25px;
+}
+
+.login-form[_ngcontent-eqi-c206]   .input__control[_ngcontent-eqi-c206] {
+  font-family: "Gotham Pro Medium", sans-serif;
+  font-weight: 500;
+  margin: 0;
+}
+
+.login-form[_ngcontent-eqi-c206]   .input__label[_ngcontent-eqi-c206] {
+  color: #39bfde;
+}
+
+.login-form__button[_ngcontent-eqi-c206] {
+  background: transparent;
+  width: 100px;
+  height: 45px;
+}
+
+.login-form__button[_ngcontent-eqi-c206]:hover {
+  color: white;
+  background-color: #39bfde;
+}
+
+.login-form[_ngcontent-eqi-c206]   button[_ngcontent-eqi-c206] {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  padding: 3px 30px;
+}
+
+@media all and (max-height: 630px) {
+  .login-form[_ngcontent-eqi-c206] {
+    padding: 0 10px;
+  }
+}
+
+.remember-pass[_ngcontent-eqi-c206] {
+  margin: 20px;
+  font-family: "Gotham Pro", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  color: #547282;
+}
+
+body[_ngcontent-eqi-c206], html[_ngcontent-eqi-c206] {
+  font-family: "Gotham Pro", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  color: #333333;
+}
+
+.font_font-family_normal[_ngcontent-eqi-c206] {
+  color: #465663;
+  font-family: "Gotham Pro", sans-serif !important;
+  font-weight: 400 !important;
+}
+
+.font_font-family_medium[_ngcontent-eqi-c206] {
+  color: #465663;
+  font-family: "Gotham Pro Medium", sans-serif !important;
+  font-weight: 500 !important;
+}
+
+.font_font-size_15px[_ngcontent-eqi-c206] {
+  font-size: 15px !important;
+}
+
+.font_font-size_20px[_ngcontent-eqi-c206] {
+  font-size: 20px !important;
+}
+
+.page__search[_ngcontent-eqi-c206] {
+  margin-bottom: 20px;
+}
+
+.page__head[_ngcontent-eqi-c206] {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.page__head-amount[_ngcontent-eqi-c206] {
+  margin-bottom: 20px;
+  color: #465663;
+}
+
+.page__heading[_ngcontent-eqi-c206] {
+  margin: 0;
+  display: inline;
+  white-space: nowrap;
+  overflow-x: hidden;
+  color: #465663;
+  font-family: "Gotham Pro Medium", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 32px;
+  color: #465663;
+}
+
+.page__btn[_ngcontent-eqi-c206] {
+  margin-left: 10px;
+}
+
+.inputs__wrapper[_ngcontent-eqi-c206] {
+  display: flex;
+  flex-direction: column;
+}
+
+@media all and (max-height: 630px) {
+  .inputs__wrapper[_ngcontent-eqi-c206] {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .inputs__wrapper[_ngcontent-eqi-c206]   div.input__container[_ngcontent-eqi-c206] {
+    flex-grow: 1;
+    max-width: 49%;
+    margin-bottom: 0;
+  }
+}
+
+.input-dropdown[_ngcontent-eqi-c206] {
+  position: relative;
+}
+
+.input__container[_ngcontent-eqi-c206] {
+  position: relative;
+  padding-bottom: 10px;
+  margin-bottom: -10px;
+}
+
+.input__container[_ngcontent-eqi-c206]   .icon-close-icon[_ngcontent-eqi-c206] {
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.input__control[_ngcontent-eqi-c206] {
+  position: relative;
+  background-color: transparent;
+  font-family: "Gotham Pro", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  color: #465663;
+  line-height: 1.4;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 10px 0 0 0;
+}
+
+.input__control[_ngcontent-eqi-c206]:disabled {
+  border-bottom-color: #e0e0e0;
+  cursor: not-allowed;
+}
+
+.input__control[_ngcontent-eqi-c206]:hover {
+  border-bottom-color: #31b7d9;
+}
+
+.input__control[_ngcontent-eqi-c206]:focus, .input__control[_ngcontent-eqi-c206]   [_ngcontent-eqi-c206]:active, .input__control--not-empty[_ngcontent-eqi-c206] {
+  outline: none;
+  border-bottom-color: #31b7d9;
+}
+
+.input__control[_ngcontent-eqi-c206]:focus    ~ .input__label[_ngcontent-eqi-c206], .input__control[_ngcontent-eqi-c206]   [_ngcontent-eqi-c206]:active    ~ .input__label[_ngcontent-eqi-c206], .input__control--not-empty[_ngcontent-eqi-c206]    ~ .input__label[_ngcontent-eqi-c206] {
+  top: -12px;
+  font-size: 12px !important;
+  line-height: 12px !important;
+  color: #465663;
+}
+
+body[_ngcontent-eqi-c206]    > .modal[_ngcontent-eqi-c206] {
+  top: 75px !important;
+  overflow-y: hidden !important;
+  z-index: 100 !important;
+}
+
+@media (min-width: 576px) {
+  .modal-dialog[_ngcontent-eqi-c206] {
+    margin: 0 !important;
+  }
+}
+
+.modal-dialog[_ngcontent-eqi-c206] {
+  max-width: unset;
+  height: 100%;
+}
+
+.modal-content[_ngcontent-eqi-c206] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border: none;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.modal__bottom-block[_ngcontent-eqi-c206] {
+  height: 80px;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 10px 30px;
+  background: #fff;
+  border-top: 1px solid #a9b7c4;
+}
+
+.modal__bottom-buttons[_ngcontent-eqi-c206] {
+  min-width: 40%;
+}
+
+.modal__bottom-button[_ngcontent-eqi-c206] {
+  height: 100%;
+  margin: 0 10px;
+}
+
+.modal__position-success[_ngcontent-eqi-c206] {
+  background-color: rgb(237, 245, 239);
+}
+
+.modal__position-deleted[_ngcontent-eqi-c206]   td[_ngcontent-eqi-c206] {
+  color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.modal__position-deleted__message[_ngcontent-eqi-c206] {
+  color: #3d4b71 !important;
+}
+
+.modal__position-error[_ngcontent-eqi-c206] {
+  background-color: rgb(250, 220, 220);
+}
+
+.version-info-block[_ngcontent-eqi-c206] {
+  color: #a9b7c4;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.version-info-number[_ngcontent-eqi-c206] {
+  color: #547282;
+}
+
+mat-option[_ngcontent-eqi-c206]:hover:not(.mat-option-disabled), mat-option.mat-active[_ngcontent-eqi-c206] {
+  background-color: #e6f7ff;
+}
+
+mat-option[_ngcontent-eqi-c206] {
+  white-space: unset;
+  overflow: unset;
+  text-overflow: unset;
+  line-height: unset;
+  height: auto;
+  padding: 5px 16px;
+}</style><style>.mat-autocomplete-panel{min-width:112px;max-width:280px;overflow:auto;-webkit-overflow-scrolling:touch;visibility:hidden;max-width:none;max-height:256px;position:relative;width:100%;border-bottom-left-radius:4px;border-bottom-right-radius:4px}.mat-autocomplete-panel.mat-autocomplete-visible{visibility:visible}.mat-autocomplete-panel.mat-autocomplete-hidden{visibility:hidden}.mat-autocomplete-panel-above .mat-autocomplete-panel{border-radius:0;border-top-left-radius:4px;border-top-right-radius:4px}.mat-autocomplete-panel .mat-divider-horizontal{margin-top:-1px}.cdk-high-contrast-active .mat-autocomplete-panel{outline:solid 1px}mat-autocomplete{display:none}</style></head>
+  <body style="min-width: unset;">
+    <app-root ng-version="14.3.0"><router-outlet></router-outlet><app-login _nghost-eqi-c206=""><header _ngcontent-eqi-c206="" class="header"><div _ngcontent-eqi-c206="" class="row"><div _ngcontent-eqi-c206="" class="col"><a _ngcontent-eqi-c206="" href="javascript:void(0)" class="logo"><img _ngcontent-eqi-c206="" alt="" src="./assets/img/misLogo.png" class="logoMinWidth"></a></div><div _ngcontent-eqi-c206=""><div _ngcontent-eqi-c206="" class="col lh35" style="font-size: 20px;"><div _ngcontent-eqi-c206="" class="row"></div><div _ngcontent-eqi-c206="" class="row"><div _ngcontent-eqi-c206="" class="authorization-header"><span _ngcontent-eqi-c206="">Авторизация</span></div></div></div></div></div></header><div _ngcontent-eqi-c206="" class="form-wrapper"><div _ngcontent-eqi-c206="" class="login-form"><div _ngcontent-eqi-c206="" class="login-form__header"><h2 _ngcontent-eqi-c206="">Здравствуйте</h2></div><form _ngcontent-eqi-c206="" novalidate="" class="ng-untouched ng-pristine ng-invalid"><div _ngcontent-eqi-c206="" class="input__container"><input _ngcontent-eqi-c206="" type="text" placeholder="" appmaterialinputlabel="" name="organisationInput" appdebounceinput="" class="mat-autocomplete-trigger input__control input__error ng-untouched ng-pristine ng-valid" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-haspopup="listbox"><!----><label _ngcontent-eqi-c206="" class="input__label">Выберите учреждение</label><div _ngcontent-eqi-c206="" appmaterialinputclose="" class="input__icon"><span _ngcontent-eqi-c206="" class="icon-close-icon"></span></div><mat-autocomplete _ngcontent-eqi-c206="" autoactivefirstoption="" class="mat-autocomplete"><!----></mat-autocomplete><!----></div><div _ngcontent-eqi-c206="" class="inputs__wrapper"><div _ngcontent-eqi-c206="" class="input__container"><input _ngcontent-eqi-c206="" type="text" placeholder="" appmaterialinputlabel="" name="loginInput" required="" class="input__control ng-untouched ng-pristine ng-invalid"><label _ngcontent-eqi-c206="" class="input__label">Введите логин</label><div _ngcontent-eqi-c206="" appmaterialinputclose="" class="input__icon"><span _ngcontent-eqi-c206="" class="icon-close-icon"></span></div><!----></div><div _ngcontent-eqi-c206="" class="input__container"><input _ngcontent-eqi-c206="" type="password" placeholder="" appmaterialinputlabel="" name="passwordInput" required="" class="input__control ng-untouched ng-pristine ng-invalid"><label _ngcontent-eqi-c206="" class="input__label">Введите пароль</label><div _ngcontent-eqi-c206="" appmaterialinputclose="" class="input__icon"><span _ngcontent-eqi-c206="" class="icon-close-icon"></span></div><!----></div></div><button _ngcontent-eqi-c206="" nz-button="" type="submit" class="login-form__button" style="position: relative; line-height: 38px;" disabled=""> Войти <!----></button></form></div><div _ngcontent-eqi-c206="" class="remember-pass"> Забыли логин или пароль? - <span _ngcontent-eqi-c206="" style="color: #a9b7c4;">обратитесь к администратору вашего учреждения</span></div></div><!----></app-login><!----></app-root>
+  <script src="runtime.bea2bc6c118a15c4.js" type="module"></script><script src="polyfills.9afb3ab0cf5d17cd.js" type="module"></script><script src="scripts.deb48beee06f34a3.js" defer=""></script><script src="main.dd955b58f5bc844d.js" type="module"></script>
+
+</body></html>
